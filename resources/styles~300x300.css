@@ -1,0 +1,146 @@
+.background { 
+    x: 0; 
+    y: 0; 
+    width: 100%; 
+    height: 100%; 
+    fill: fb-black; 
+  }
+  
+  #wait-screen-spinner { 
+    x: 50%-25; 
+    y: 50%-50; 
+    width: 50; 
+    height: 50; 
+    fill: white; 
+  }
+  
+  #wait-screen-text { 
+    x: 50%; 
+    y: 50%+34;
+    width: 250;
+    font-family: System-Regular; 
+    font-size: 24;
+    text-anchor: middle;
+    text-length: 32; 
+    fill: fb-blue; 
+  }
+  
+  .content { 
+    x: 0; 
+    y: 42; 
+    width: 100%; 
+    height: 100%-42;
+  }
+  
+  .header-line { 
+    x1: 4; 
+    y1: 40; 
+    x2: 100%-4; 
+    y2: 40; 
+    stroke-width: 4; 
+    stroke-linecap: round; 
+    fill: fb-blue; 
+  }
+  
+  .status-icon { 
+    x: 100%-70; 
+    y: 6; 
+    width: 24; 
+    height: 24; 
+    fill: fb-light-gray;
+  }
+  
+  .header-txt {
+    x: 12; 
+    y: 28;
+    font-family: Colfax-Bold; 
+    font-size: 28; 
+    text-anchor: start; 
+    fill: white;
+  }
+  
+  .tile-list-item { 
+    height: 86; 
+  }
+  
+  .title-txt {
+    x: 12;
+    y: 50%-8;
+    width:100%-24;
+    height: 40; 
+    font-family: Colfax-Regular; 
+    font-size: 30; 
+    text-overflow: clip; 
+    text-anchor: start; 
+    fill: white; 
+  }
+  
+  .desc-txt {
+    x: 12; 
+    y: $;
+    width:100%-24;
+    font-family: Colfax-Regular; 
+    font-size: 24; 
+    text-overflow: ellipsis; 
+    text-anchor: start; 
+    fill: fb-light-gray;
+  }
+  
+  .tile-divider-bottom { 
+    x: 4; 
+    y: 100%-2; 
+    width: 100%-8; 
+    height: 2; 
+    fill: fb-extra-dark-gray;
+  }
+  
+  .tile-touch {
+    x: 0; 
+    y: 0; 
+    width: 100%; 
+    height: 100%-2; 
+    fill: white; 
+    fill-opacity: 0; 
+  }
+  
+  .status-general { 
+    x: 12; 
+    y: 0;
+    width: 100%; 
+    height: 100%;
+  }
+  
+  
+  .status-title-txt { 
+    x: 12; 
+    y: 100%;
+    width: 100%-24; 
+    font-family: Colfax-Regular; 
+    font-size: 30; 
+    text-overflow: clip; 
+    text-anchor: start; 
+    fill: white; 
+  }
+  
+  .status-image {
+    x: 0; 
+    y: 50%-16; 
+    width: 32; 
+    height: 32; 
+    fill: fb-white; 
+  }
+  
+  .status-txt { 
+    x: $+12; 
+    y: 50%+10; 
+    width: 100%-68; 
+    font-family: Colfax-Regular; 
+    font-size: 28; 
+    text-overflow: clip; 
+    text-anchor: start; 
+    fill: white; 
+  }
+  
+  .buttons-action-item {
+    display: none;
+  }

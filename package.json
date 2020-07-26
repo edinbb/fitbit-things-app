@@ -1,0 +1,36 @@
+{
+  "name": "fitbit-things-app",
+  "version": "0.5.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "^4.1.0",
+    "@fitbit/sdk-cli": "^1.7.2"
+  },
+  "fitbit": {
+    "appUUID": "257e2c25-52a7-46b7-980e-5db36789ccf1",
+    "appType": "app",
+    "appDisplayName": "Things",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#03A9F4",
+    "requestedPermissions": [
+      "access_internet"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini",
+      "mira"
+    ],
+    "i18n": {}
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  },
+  "dependencies": {
+    "fp-ts": "^2.5.3",
+    "gulp": "^4.0.2",
+    "io-ts": "^2.1.2"
+  }
+}

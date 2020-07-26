@@ -1,0 +1,149 @@
+<svg>
+  <defs>
+    <!-- Status Screen Symbols -->
+    <symbol id='status-screen-title' href='#scrollview-item' height='46'>
+      <text id='title' text-length='128' class='status-title-txt' />
+    </symbol>
+
+    <symbol id='status-item' href='#scrollview-item' class='status-general' height='46'>
+      <image id='image' class='status-image' />
+      <text id='text' text-length='64' class='status-txt' />
+    </symbol>
+
+    <symbol id='status-buttons-action' href='#scrollview-item' class='buttons-action-item' height='74'>
+      <use href='#square-button' class='dialog-half-button-left' fill='fb-mint'>
+        <set href='#text' attributeName='text-length' to='32' />
+        <set href='#text' attributeName='text-buffer' to='Action' />
+        <set href='#text' attributeName='text-anchor' to='middle' />
+      </use>
+      <use href='#square-button' class='dialog-half-button-left' x='50%' fill='fb-mint'>
+        <set href='#text' attributeName='text-length' to='32' />
+        <set href='#text' attributeName='text-buffer' to='Action' />
+        <set href='#text' attributeName='text-anchor' to='middle' />
+      </use>
+    </symbol>
+
+    <symbol id='status-button-close' href='#scrollview-item' height='76'>
+      <use id='button' href='#square-button' class='dialog-single-btn' fill='fb-magenta'>
+        <set href='#text' attributeName='text-buffer' to='Close' />
+        <set href='#text' attributeName='text-anchor' to='middle' />
+     </use>   
+    </symbol>
+
+    <symbol  id='status' display='none' opacity='0' class='content'>
+      <rect class='background' />
+      <use id='container' href='#scrollview' overflow='hidden'>
+        <use href='#status-screen-title' />
+        <use href='#scrollview-item' height='18' />
+        <use href='#status-item' />
+        <use href='#status-item' />
+        <use href='#status-item' />
+        <use href='#status-buttons-action' />
+        <use href='#status-buttons-action' />
+        <use href='#status-buttons-action' />
+        <use id='btn-close' href='#status-button-close' />
+        <use href='#scrollview-item' height='10' />
+      </use>
+      <animate attributeName='display' to='inline' dur='0' begin='enable' />
+      <animate attributeName='display' to='none' dur='0' begin='disable+0.033' />
+      <animate attributeName='opacity' to='1' dur='0.4' begin='enable+0.033' easing='ease-in-out' />
+      <animate attributeName='opacity' to='0' dur='0' begin='disable' easing='ease-in-out' />
+    </symbol>
+    <!-- Error Screen -->
+    <symbol  id='error' display='none' opacity='0' layer='3'>
+      <rect class='background' />
+      <use href='#mixed-text-center-mid' height='100%' fill='fb-blue'>
+        <set href='#header/text' attributeName='text-buffer' to='Things'/>
+        <set href='#copy/text' attributeName='text-length' to='128' />
+      </use>
+      <animate attributeName='display' to='inline' dur='0' begin='enable' />
+      <animate attributeName='display' to='none' dur='0' begin='disable+0.433' />
+      <animate attributeName='opacity' to='1' dur='0.4' begin='enable+0.033' easing='ease-in-out' />
+      <animate attributeName='opacity' to='0' dur='0.4' begin='disable' easing='ease-in-out' />
+    </symbol>
+    <!-- Wait Screen -->
+    <symbol id='wait' display='none' layer='2'>
+        <rect class='background' />
+        <use id='wait-screen-spinner' href='#spinner' />
+        <text id='wait-screen-text'>Please wait...</text>
+        <animate attributeName='display' to='inline' dur='0' begin='enable' />
+        <animate attributeName='display' to='none'   dur='0' begin='disable' />
+    </symbol>
+    <!-- Header Symbols -->
+    <symbol id='header-item' layer='1'>
+      <line class='header-line' />
+      <use id='spinner' href='#spinner' class='status-icon' />
+      <svg id='check' class='status-icon' opacity='0'>
+        <rect class='background' />
+        <image  href='check.png'  fill='fb-mint' />
+        <animate attributeName='opacity' to='1' dur='0.4' begin='enable' easing='ease' final='keep' />
+        <animate attributeName='opacity' to='0' dur='0' begin='enable+2' final='keep' />
+      </svg>
+      <svg id='x' class='status-icon' opacity='0'>
+        <rect class='background' />
+        <image  href='x.png' fill='fb-magenta' />
+        <animate attributeName='opacity' to='1' dur='0.4' begin='enable' easing='ease' final='keep' />
+        <animate attributeName='opacity' to='0' dur='0' begin='enable+2' final='keep' />
+      </svg>
+      <use href='#pagination-widget' x='50%-24' y='14'> 
+        <use href='#pagination-dot' />
+        <use href='#pagination-dot' />
+        <use href='#pagination-highlight-dot' />
+      </use>
+    </symbol>
+
+    <symbol id='header-text' layer='1'>
+      <text id='text' text-length='16' class='header-txt' />
+    </symbol>
+    <!-- Virtual Tile List Symbols -->
+    <symbol id='tile-item' href='#tile-list-item' focusable='false' pointer-events='none' system-events='all' display='none'>
+      <text id='title' text-length='128' class='title-txt' />
+      <text id='desc' text-length='128' class='desc-txt' /> 
+      <rect id='tile-divider-bottom' class='tile-divider-bottom' />
+      <rect id='tile-touch' pointer-events='all' class='tile-touch' />
+    </symbol>  
+    
+    <symbol id='list' href='#tile-list' display='none' opacity='0' overflow='hidden' class='content'>  
+      <var id='virtual' value='1' />
+      <var id='reorder-enabled' value='0' />
+      <var id='peek-enabled' value='0' />
+      <var id='separator-height-bottom' value='2' />
+      
+      <rect class='background' />
+      <use id='pool' href='#tile-list-pool'>
+        <use id='pool[0]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[1]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[2]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[3]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[4]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[5]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[6]' href='#tile-item' class='tile-list-item' />
+        <use id='pool[7]' href='#tile-item' class='tile-list-item' />
+      </use>
+      <animate attributeName='display' to='inline' dur='0' begin='enable' />
+      <animate attributeName='display' to='none' dur='0' begin='disable+0.433' />
+      <animate attributeName='opacity' to='1' dur='0' begin='enable+0.033' easing='ease-in-out' />
+      <animate attributeName='opacity' to='0' dur='0.4' begin='disable' easing='ease-in-out' />
+    </symbol>
+  </defs>
+
+  <use href='#panoramaview' overflow='hidden'>
+    <use id='header' href='#header-item' />
+    <use href='#panoramaview-item'>
+      <use href='#header-text' >
+        <set href='#text' attributeName='text-buffer' to='Scenes'/>
+      </use>
+      <use id='scene-list' href='#list' />
+    </use>
+    <use href='#panoramaview-item'>
+      <use href='#header-text' >
+        <set href='#text' attributeName='text-buffer' to='Devices'/>
+      </use>
+      <use id='device-list' href='#list' />
+    </use>
+  </use>
+
+  <use id='status-screen' href='#status' />
+  <use id='wait-screen' href='#wait' />
+  <use id='error-screen' href='#error' />
+</svg>
