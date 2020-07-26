@@ -5,7 +5,7 @@ Things is a lightweight app that lets you control Samsung SmartThings scenes and
 
 ![](screenshot.png)
 
-Get the app here https://gam.fitbit.com/gallery/app/257e2c25-52a7-46b7-980e-5db36789ccf1
+Get the app [here](https://gallery.fitbit.com/details/257e2c25-52a7-46b7-980e-5db36789ccf1)
 
 ## Installation
 
